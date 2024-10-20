@@ -158,7 +158,8 @@ const Home = () => {
               </li>
             </ul>
             <div className="hidden md:block">
-              <button
+              <Link
+                to="/signup"
                 className={`py-2 px-6 rounded-full transition ${
                   isScrolled
                     ? "bg-blue-600 text-white hover:bg-blue-700"
@@ -166,7 +167,7 @@ const Home = () => {
                 }`}
               >
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
         </nav>

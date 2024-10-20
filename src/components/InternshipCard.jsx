@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaClock, FaChevronRight, FaUsers, FaBriefcase } from 'react-icons/fa';
 
@@ -33,9 +34,9 @@ const InternshipCard = ({ internship, index }) => {
           <span>{internship.vacancies} openings</span>
         </div>
       </div>
-      <button className="mt-6 w-full bg-blue-600 text-white py-2 rounded-full hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center">
-        Apply Now <FaChevronRight className="ml-2" />
-      </button>
+      <Link to={`/internship/${internship.id}`} className="mt-6 w-full bg-blue-600 text-white py-2 rounded-full hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center">
+        View Details <FaChevronRight className="ml-2" />
+      </Link>
     </motion.div>
   );
 };
