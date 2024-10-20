@@ -250,7 +250,9 @@ const InternshipDetails = () => {
           >
             <div className="px-4 py-5 sm:px-6 flex justify-between items-center flex-wrap">
               <div className="flex items-center mb-2 sm:mb-0">
-                <img className="h-16 w-16 rounded-full object-cover mr-4" src={internship.logo} alt={internship.company} />
+                <Link to={`/organization/${internship.companyId}`}>
+                  <img className="h-16 w-16 rounded-full object-cover mr-4" src={internship.logo} alt={internship.company} />
+                </Link>
                 <div>
                   <h3 className="text-lg leading-6 font-medium text-gray-900">{internship.company}</h3>
                   <p className="mt-1 max-w-2xl text-sm text-gray-500">{internship.location}</p>

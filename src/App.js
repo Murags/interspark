@@ -9,6 +9,7 @@ import ProfilePage from './pages/ProfilePage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import InternshipDetails from './pages/InternshipDetails';
+import OrganizationDetails from './pages/OrganizationDetails';
 
 function App() {
   // This should be determined by your authentication logic
@@ -26,6 +27,7 @@ function App() {
         <Route path="/internship/:id" element={<InternshipDetails />} />
         <Route path="/student-dashboard/saved-internships" element={<SavedInternships />} />
         <Route path="/student-dashboard/my-applications" element={<MyApplications />} />
+        <Route path="/organization/:id" element={<OrganizationDetails />} />
         {/* Add other routes as needed */}
       </Routes>
     </Router>
