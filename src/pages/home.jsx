@@ -117,44 +117,44 @@ const Home = () => {
               }`}
             >
               <li>
-                <a
-                  href="#problem"
+                <Link
+                  to="/find-internships"
                   className={`hover:text-blue-300 transition ${
                     isScrolled ? "text-gray-600" : "text-white"
                   }`}
                 >
-                  Problem
-                </a>
+                  Find Internships
+                </Link>
               </li>
               <li>
-                <a
-                  href="#solution"
+                <Link
+                  to="/companies"
                   className={`hover:text-blue-300 transition ${
                     isScrolled ? "text-gray-600" : "text-white"
                   }`}
                 >
-                  Solution
-                </a>
+                  Companies
+                </Link>
               </li>
-              <li>
-                <a
-                  href="#vision"
+              {/* <li>
+                <Link
+                  to="/resources"
                   className={`hover:text-blue-300 transition ${
                     isScrolled ? "text-gray-600" : "text-white"
                   }`}
                 >
-                  Vision
-                </a>
-              </li>
+                  Resources
+                </Link>
+              </li> */}
               <li>
-                <a
-                  href="#join"
+                <Link
+                  to="/about"
                   className={`hover:text-blue-300 transition ${
                     isScrolled ? "text-gray-600" : "text-white"
                   }`}
                 >
-                  Join Us
-                </a>
+                  About Us
+                </Link>
               </li>
             </ul>
             <div className="hidden md:block">

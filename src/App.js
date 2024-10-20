@@ -10,6 +10,8 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import InternshipDetails from './pages/InternshipDetails';
 import OrganizationDetails from './pages/OrganizationDetails';
+import Companies from './pages/Companies';
+
 
 function App() {
   // This should be determined by your authentication logic
@@ -28,6 +30,7 @@ function App() {
         <Route path="/student-dashboard/saved-internships" element={<SavedInternships />} />
         <Route path="/student-dashboard/my-applications" element={<MyApplications />} />
         <Route path="/organization/:id" element={<OrganizationDetails />} />
+        <Route path="/companies" element={<Companies />} />
         {/* Add other routes as needed */}
       </Routes>
     </Router>
