@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaSearch, FaFilter } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaSearch, FaFilter, FaArrowLeft } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import InternshipCard from '../components/InternshipCard';
 
 const FindInternships = ({ isLoggedIn }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('');
+  const navigate = useNavigate();
 
   const internships = [
     { id: 1, title: 'Software Engineer Intern', company: 'Safaricom', location: 'Nairobi', logo: '/images/safaricom-logo.png', time: '2 days ago', applicants: 15, vacancies: 30 },
@@ -24,13 +26,25 @@ const FindInternships = ({ isLoggedIn }) => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <header className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-4">
+            <motion.button
+              onClick={() => navigate(-1)}
+              className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <FaArrowLeft className="inline-block mr-2" />
+              <span className="font-medium">Back</span>
+            </motion.button>
+            {isLoggedIn && (
+              <Link to="/student-dashboard" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">
+                Go to Dashboard
+              </Link>
+            )}
+          </div>
           <h1 className="text-3xl font-bold text-gray-800">Find Internships</h1>
-          {isLoggedIn && (
-            <Link to="/student-dashboard" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">
-              Go to Dashboard
-            </Link>
-          )}
         </div>
       </header>
       <main className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">

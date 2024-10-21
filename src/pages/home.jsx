@@ -156,6 +156,16 @@ const Home = () => {
                   About Us
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/sponsors"
+                  className={`hover:text-blue-300 transition ${
+                    isScrolled ? "text-gray-600" : "text-white"
+                  }`}
+                >
+                  Our Sponsors
+                </Link>
+              </li>
             </ul>
             <div className="hidden md:block">
               <Link
