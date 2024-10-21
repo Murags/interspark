@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaUserGraduate, FaUserTie, FaCheckCircle, FaTimes } from 'react-icons/fa';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 const OverviewContent = () => {
   const [selectedApplication, setSelectedApplication] = useState(null);
@@ -105,24 +105,29 @@ const OverviewContent = () => {
 
   const ApplicationTrend = () => {
     const data = [
-      { name: 'Jan', applications: 65 },
-      { name: 'Feb', applications: 59 },
-      { name: 'Mar', applications: 80 },
-      { name: 'Apr', applications: 81 },
-      { name: 'May', applications: 56 },
-      { name: 'Jun', applications: 55 },
+      { name: 'Jan', applications: 65, accepted: 20 },
+      { name: 'Feb', applications: 59, accepted: 18 },
+      { name: 'Mar', applications: 80, accepted: 25 },
+      { name: 'Apr', applications: 81, accepted: 22 },
+      { name: 'May', applications: 56, accepted: 15 },
+      { name: 'Jun', applications: 55, accepted: 17 },
     ];
 
     return (
       <div className="bg-white p-6 rounded-lg shadow-md col-span-3">
         <h3 className="text-lg font-semibold text-gray-700 mb-4">Application Trend</h3>
-        <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={data}>
+        <ResponsiveContainer width="100%" height={400}>
+          <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
-            <Tooltip />
-            <Bar dataKey="applications" fill="#3b82f6" />
+            <Tooltip
+              contentStyle={{ backgroundColor: '#f3f4f6', border: 'none', borderRadius: '8px' }}
+              cursor={{ fill: 'rgba(59, 130, 246, 0.1)' }}
+            />
+            <Legend />
+            <Bar dataKey="applications" fill="#3b82f6" name="Total Applications" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="accepted" fill="#10b981" name="Accepted" radius={[4, 4, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
