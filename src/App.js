@@ -12,6 +12,8 @@ import InternshipDetails from './pages/InternshipDetails';
 import OrganizationDetails from './pages/OrganizationDetails';
 import Companies from './pages/Companies';
 import Sponsors from './pages/Sponsors';
+import CompanySignup from './pages/CompanySignup';
+import OrganizationDashboard from './pages/OrganizationDashboard';
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
         <Route path="/organization/:id" element={<OrganizationDetails />} />
         <Route path="/companies" element={<Companies />} />
         <Route path="/sponsors" element={<Sponsors />} />
+        <Route path="/company-signup" element={<CompanySignup />} />
+        <Route path="/company-dashboard" element={<OrganizationDashboard />} />
         {/* Add other routes as needed */}
       </Routes>
     </Router>
